@@ -8,7 +8,7 @@ conky.config = {
 	cpu_avg_samples = 2,
 	net_avg_samples = 2,
 
-	override_utf8_locale true,
+	override_utf8_locale = true,
 
 	double_buffer = true,
 	no_buffers = true,
@@ -30,10 +30,10 @@ conky.config = {
 	border_inner_margin = 0,
 	border_outer_margin = 0,
 
-	minimum_size 200, 250,
-	maximum_width 200,
+	minimum_size = 200, 250,
+	minimum_width = 230,
 
-	alignment tr, -- top_right
+	alignment = 'top_left',
 	gap_x = 35,
 	gap_y = 55,
 
@@ -48,7 +48,7 @@ conky.config = {
 	xftfont = 'Caviar Dreams:size=8',
 	xftalpha = 0.5,
 
-	uppercase false,
+	uppercase = false,
 
 	--temperature_unit = celsius,
 
@@ -56,30 +56,27 @@ conky.config = {
 	default_color = FFFFFF,
 
 	-- Lua Load --
-	lua_load = '~/.conky/clock_rings.lua'
+	lua_load = '~/.conky/clock_rings.lua',
 	lua_draw_hook_pre = 'clock_rings'
 }
 conky.text = [[
-${voffset 8}${color 339900}${font Caviar Dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font Caviar Dreams:size=38}${time %e}${font}
-${color FFFFFF}${voffset -30}${color FFFFFF}${font Caviar Dreams:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font Caviar Dreams:size=20}${time %Y}${font}${color 339900}${hr}
-${voffset 140}${font Caviar Dreams:size=10}${alignr}HOME${font}
+${voffset 8}${color #0e8999}${font Caviar Dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color #ffc509}${font Caviar Dreams:size=38}${time %e}${font}
+${color FFFFFF}${voffset -30}${color #5eda56}${font Caviar Dreams:size=18}${time %b}${font}${voffset -3} ${color #ff5174}${font Caviar Dreams:size=20}${time %Y}${font}${color FFFFFF}${hr}${voffset 140}${font Caviar Dreams:size=10}${alignr}HOME${font}
 
-${image ~/.conky/linuxmint_main_logo.png -p 60,120 -s 81x27}
+#${image ~/.conky/relogio.png -p 39,89 -s 120x120}
 
 ${color FFFFFF}${goto 25}${voffset 35}${cpu cpu0}%
-${color 339900}${goto 25}CPU${color FFFFFF}${goto 50}${voffset 23}${memperc}%
-${color 339900}${goto 50}RAM
+${color #ff5174}${goto 25}CPU${color FFFFFF}${goto 50}${voffset 23}${memperc}%
+${color #0e8999}${goto 50}RAM
 ${color FFFFFF}${goto 75}${voffset 23}${swapperc}%
-${color 339900}${goto 75}Swap${color FFFFFF}${goto 100}${voffset 23}${fs_used_perc /}%
-${color 339900}${goto 100}Disk
+${color #ffc509}${goto 75}Swap${color FFFFFF}${goto 100}${voffset 23}${fs_used_perc /}%
+${color #5eda56}${goto 100}Disk
 ${color FFFFFF}${goto 125}${voffset 25}${downspeed eth0}${color FFFFFF}${goto 125}${upspeed eth0}
-${color 339900}${goto 125}Net
+${color FFFFFF}${goto 125}Net
 
 
 ${color FFFFFF}${font Caviar Dreams:size=8}Uptime: ${uptime_short}
 ${color FFFFFF}${font Caviar Dreams:size=8}Processes: ${processes}
 ${color FFFFFF}${font Caviar Dreams:size=8}Running: ${running_processes}
 
-#${color 339900}${font Caviar Dreams:size=8}${alignr}${nodename}
-${color 339900}${font Caviar Dreams:size=8}${alignr}Linux Mint 19.3 Tricia  $machine
-${color 339900}${font Caviar Dreams:size=8}${alignr}Kernel: ${kernel}]]
+]]
